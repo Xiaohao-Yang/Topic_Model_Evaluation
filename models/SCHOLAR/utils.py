@@ -9,7 +9,7 @@ import math
 from scipy import sparse
 import torch
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from TM_eval import topic_diversity, text_clustering
 from word_set_similarity import *
 from sklearn.ensemble import RandomForestClassifier
