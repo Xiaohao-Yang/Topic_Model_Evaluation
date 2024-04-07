@@ -3,13 +3,13 @@ import os
 from gensim.models.wrappers import LdaMallet
 from gensim.matutils import Sparse2Corpus
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from read_data import *
 from TM_eval import evaluation
 import gensim.downloader as api
 
 # set up mallet and set your own path here
-path_to_mallet_binary = "/home/xyan0052/Mallet/bin/mallet"
+# path_to_mallet_binary = "/home/<someone>/Mallet/bin/mallet"
 
 
 parser = argparse.ArgumentParser(description='LDA')
