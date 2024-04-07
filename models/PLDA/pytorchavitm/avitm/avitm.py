@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from pytorchavitm.avitm.decoder_network import DecoderNetwork
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from TM_eval import evaluation
 
 
