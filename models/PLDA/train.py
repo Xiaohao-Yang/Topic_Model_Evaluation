@@ -4,7 +4,7 @@ from pytorchavitm import AVITM
 from pytorchavitm.datasets import BOWDataset
 import gensim.downloader as api
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from read_data import *
 import torch
 import numpy as np
