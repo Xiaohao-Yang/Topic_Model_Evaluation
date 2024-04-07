@@ -5,7 +5,7 @@ import torch
 import math
 import numpy as np
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from read_data import *
 from TM_eval import evaluation
 import gensim.downloader as api
