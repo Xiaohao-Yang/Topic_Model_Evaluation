@@ -9,7 +9,7 @@ from embedded_topic_model.models.model import Model
 from embedded_topic_model.utils import data
 from embedded_topic_model.utils import embedding
 import sys
-sys.path.append('../TM_Eval_Github')
+sys.path.append('../Topic_Model_Evaluation-main')
 from TM_eval import evaluation
 from operator import itemgetter
 
