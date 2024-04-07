@@ -5,7 +5,7 @@ Evaluation of topic model generative quality with large language models.
 
 # Dataset
 
-# Get keywords of document from LLMs
+# Get document keywords from LLMs
 
 # Similarity between word sets
 
