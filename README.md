@@ -38,10 +38,27 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 
 
 # Get document keywords from LLMs
+Here, we provide an example of document keyword summarisation by an LLM, which is also illustrated in 'example.py'.
+
+Firstly, we randomly pick some documents from '20News' and 'DBpedia':
+```python
+# 20News
+newsgroups = fetch_20newsgroups(subset='all', remove=('headers', 'footers', 'quotes')).data
+newsgroups = [process_huamn_readable(text) for text in newsgroups]  # or define your own 'process_huamn_readable'
+newsgroups = newsgroups[1000:1010]
+
+# DBpedia
+with open('datasets/DBpedia.txt', 'r') as file:
+    DBpedia = file.readlines()
+    file.close()
+DBpedia = DBpedia[1000:1010]
+```
+
+
 
 # Similarity between word sets
 
-# Contextalised word embeddings from LLMs
+# Get contextalised word embeddings from LLMs
 
 # Run all evaluation metrics
 
