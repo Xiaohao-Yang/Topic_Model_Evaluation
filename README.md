@@ -26,6 +26,16 @@ bitsandbytes: 0.42.0
 ```
 
 # Dataset
+We use '20News' and 'DBpedia' (a random subset) for our experiments. The pre-processed datasets can be found in the 'datasets' folder.
+
+We store our pre-processed datasets in .mat files, which can be loaded as dictionaries using scipy.io.loadmat(). The datasets/dictionaries have the following common attributes/keys:
+* train_data, train_label: bag-of-words (BOW) of training documents, and their labels.
+* test_data, test_label: BOW of testing documents, and their labels.
+* voc, word_embeddings: vocabularies of the corpus, and their word embeddings from 'glove-wiki-gigaword-50'.
+* test1, test2: the first and second fold of the test BOWs (for computing document completion perplexity).
+* train_text, test_text: text documents of training and testing set.
+* train_llama, test_llama: document keywords obtained from the LLM of training and testing documents. We run the LLM for keyword summarisation once for all the documents and store it here, to reduce resouces.
+
 
 # Get document keywords from LLMs
 
