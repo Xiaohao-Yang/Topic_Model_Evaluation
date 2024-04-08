@@ -53,6 +53,19 @@ with open('datasets/DBpedia.txt', 'r') as file:
     file.close()
 DBpedia = DBpedia[1000:1010]
 ```
+Then, we define 1) the path to the LLM model you want to use, and 2) the path to the 'llama.cpp' package, and 3) the number of keywords you expected:
+```python
+# llm model path
+# download the model from hugging face and define your own model path
+model_path = '~/Desktop/llama.cpp/LLMs/llama-2-13b-chat.ggmlv3.q4_1.bin'
+
+# configure llama.cpp and define the package path
+package_path = '~/Desktop/llama.cpp'
+
+# expected keywords
+topn = 30
+```
+Following that, 
 
 
 
