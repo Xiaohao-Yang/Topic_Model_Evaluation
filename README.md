@@ -16,8 +16,7 @@ tqdm: 4.66.1
 pot: 0.9.3
 ```
 
-We leverage 'llama.cpp' for easy LLM inference, please set it up following [llama.cpp](https://github.com/ggerganov/llama.cpp).
-We use llama2-13b-chat in 4-bit quantisation for easy LLM inference, which can be downloaded it [here](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/tree/main). Any other LLMs in 'ggml' format that supports llama.cpp also works.
+We leverage 'llama.cpp' for easy LLM inference, please set it up following [llama.cpp](https://github.com/ggerganov/llama.cpp); The LLM we use is 'llama2-13b-chat' in 4-bit quantisation, which can be downloaded [here](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/tree/main). We are not specific to a certainty LLM, any other LLMs in 'ggml' format that supports 'llama.cpp' also works.
 
 To run LLMs using transformers or get contextualised word embedding from LLMs, please install:
 ```python
