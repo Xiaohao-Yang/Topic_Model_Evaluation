@@ -99,7 +99,7 @@ I 121 class submarine. The I 121 class submarine ( I 121 gata Sensuikan) was a c
 # keywords from the LLM
 submarine japanese navy world war minelaying class imperial service
 ```
-Typically, by extracting keywords from the LLM, we can understand the gist of the document without needing to refer to the original text. Since we only use a small, quantized model and a single in-context example for inference, there's room for enhancing the summarization accuracy. 
+Typically, by extracting keywords from the LLM, we can understand the gist of the document without needing to refer to the original text. Since we only use a quantized model and a single in-context example for inference, there's room for enhancing the summarization accuracy. 
 
 # Similarity between word sets
 
