@@ -222,14 +222,15 @@ We store the top words for learned topics in a text file for further topic coher
 
 # Reference
 Our code is based on the following implementations:
-
-
-* For NVDM: Code.
-* For PLDA: Code.
-* For ETM
-* For NSTM
-* For SCHOLAR and CLNTM
-* 
+* For NVDM: [Code](https://github.com/visionshao/NVDM).
+* For PLDA: [Code](https://github.com/estebandito22/PyTorchAVITM).
+* For ETM: [Code](https://github.com/lfmatosm/embedded-topic-model).
+* For NSTM: [Code](https://github.com/ethanhezhao/NeuralSinkhornTopicModel).
+* For SCHOLAR and CLNTM: [Code](https://github.com/nguyentthong/CLNTM).
+* For K-means clustering, topic diversity evaluation: [Code](https://github.com/NoviceStone/HyperMiner/tree/main).
+* For document classification evaluation: [Code](https://github.com/Xiaohao-Yang/Topic_Model_Generalisation).
 
 
 # Citation
+Please cite our work if it helps:
+
