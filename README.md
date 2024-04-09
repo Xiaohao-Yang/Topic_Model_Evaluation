@@ -137,8 +137,61 @@ tokenizer = AutoTokenizer.from_pretrained(
     add_eos_token=True)
 tokenizer.pad_token = tokenizer.eos_token
 ```
+Here are our example words and context documents for investigation:
+```python
+# example word and context
+word = 'bank'
+texts = ["The river bank was flooded",
+         "The bank approved my loan application",
+         "They save and withdraw money there"]
+```
+After the setup, we run for the contextualised word embeddings:
+```python
+embeddings = []
+for s in texts:
+    # add target words if not mentioned in the document
+    if not word in s.strip().split(' '):
+        s += ' this document is talking about %s' % word
 
+    # get contextualised embeddings
+    word_embedding = get_contextualized_embedding(s, word, model, tokenizer)
 
+    # simply average if multiple target words appear
+    if len(word_embedding) > 1:
+        word_embedding = torch.stack(word_embedding)
+        word_embedding = torch.mean(word_embedding, axis=0)
+
+    embeddings.append(word_embedding[0])
+```
+Let's check the output contextualised word embeddings:
+```python
+# the embeddings are different in different contexts
+print(embeddings[0])
+print(embeddings[1])
+print(embeddings[2])
+
+# check similarity
+cosine_sim1 = F.cosine_similarity(embeddings[0].unsqueeze(0), embeddings[1].unsqueeze(0))
+cosine_sim2 = F.cosine_similarity(embeddings[0].unsqueeze(0), embeddings[2].unsqueeze(0))
+cosine_sim3 = F.cosine_similarity(embeddings[1].unsqueeze(0), embeddings[2].unsqueeze(0))
+
+print(cosine_sim1)
+print(cosine_sim2)
+print(cosine_sim3)
+```
+
+```python
+tensor([ 0.6274,  0.8433, -1.8545,  ..., -0.5112,  0.2542,  0.1123],
+       dtype=torch.float16)
+tensor([ 1.1367,  0.9751, -0.0754,  ..., -0.7827, -0.0156, -0.7827],
+       dtype=torch.float16)
+tensor([ 0.8745,  1.6484, -1.0928,  ..., -0.7500,  1.0332, -0.1855],
+       dtype=torch.float16)
+
+river bank and money bank1 similarity:  tensor([0.6396], dtype=torch.float16)
+river bank and money bank2 similarity:  tensor([0.5205], dtype=torch.float16)
+money bank1 and money bank2 similarity:  tensor([0.7021], dtype=torch.float16)
+```
 
 # Run all evaluation metrics
 
