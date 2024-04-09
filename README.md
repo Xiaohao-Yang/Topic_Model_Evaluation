@@ -228,7 +228,7 @@ Our code is based on the following implementations:
 * For NSTM: [Code](https://github.com/ethanhezhao/NeuralSinkhornTopicModel).
 * For SCHOLAR and CLNTM: [Code](https://github.com/nguyentthong/CLNTM).
 * For K-means clustering, topic diversity evaluation: [Code](https://github.com/NoviceStone/HyperMiner/tree/main).
-* For document classification evaluation: [Code](https://github.com/Xiaohao-Yang/Topic_Model_Generalisation).
+* For datasets and document classification evaluation: [Code](https://github.com/Xiaohao-Yang/Topic_Model_Generalisation).
 
 
 # Citation
