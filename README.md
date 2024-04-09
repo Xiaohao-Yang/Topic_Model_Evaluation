@@ -102,6 +102,10 @@ submarine japanese navy world war minelaying class imperial service
 Typically, by extracting keywords from the LLM, we can understand the gist of the document without needing to refer to the original text. Since we only use a quantized model and a single in-context example for inference, there's room for enhancing the summarization accuracy. 
 
 # Similarity between word sets
+We propose evaluation metrics for topic models, by quantifying the similarity between keywords from the LLM and the top words from the topic model.
+* To get documents' top words from a topic model, check the 'get_doc_word' function of each model's utils.
+* To get documents' keywords from the LLM, check 'example.py'.
+* To compute the similarity between 2 word sets, check 'word_set_similarity.py'.
 
 # Get contextalised word embeddings from LLMs
 
