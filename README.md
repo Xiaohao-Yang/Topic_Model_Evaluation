@@ -193,7 +193,29 @@ river bank and money bank2 similarity:  tensor([0.5205], dtype=torch.float16)
 money bank1 and money bank2 similarity:  tensor([0.7021], dtype=torch.float16)
 ```
 
-# Run all evaluation metrics
+# Run evaluation for topic models
+To run evaluation for topic models:
+```python
+python main.py --dataset 20News --model NVDM --n_topic 50 --random_seed 1 --epochs 100 --eval_step 10
+```
+Evaluation output at 'eval_step':
+```python
+##########################################
+Evaluation Phase ...
+NVDM_20News_K50_RS1_epochs:10_LR0.001
+############################################
+doc classification acc:  0.40251358695652173
+test ppl:  2991.5
+topic diversity:  0.552
+purity_test:  0.3179347826086957
+nmi_test:  0.2826704840571955
+test doc words similarity overlap:  0.025357959581776286
+test doc words similarity synset:  0.033568926088255305
+test doc words similarity OA:  4.176522543640821
+test doc words similarity OT:  0.5356814424001106
+##########################################
+```
+We store the top words for learned topics in a text file for further topic coherence evaluation, which can be done by the [Palmetto](https://github.com/dice-group/Palmetto) package.
 
 # Reference
 
