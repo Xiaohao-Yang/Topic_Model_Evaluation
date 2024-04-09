@@ -107,7 +107,12 @@ We propose evaluation metrics for topic models, by quantifying the similarity be
 * To get documents' keywords from the LLM, check 'example.py'.
 * To compute the similarity between 2 word sets, check 'word_set_similarity.py'.
 
-# Get contextalised word embeddings from LLMs
+# Get contextualised word embeddings from LLMs
+For our distance-based evaluation metrics, we consider word embeddings. The word embeddings can be static word embeddings from a pre-trained model such as 'Glove', or a dynamic word embedding that considers the context.
+
+Here we provide an example that obtains contextualised word embeddings from an LLM.
+
+
 
 # Run all evaluation metrics
 
