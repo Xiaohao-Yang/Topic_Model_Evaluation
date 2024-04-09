@@ -84,6 +84,6 @@ if __name__ == '__main__':
     cosine_sim2 = F.cosine_similarity(embeddings[0].unsqueeze(0), embeddings[2].unsqueeze(0))
     cosine_sim3 = F.cosine_similarity(embeddings[1].unsqueeze(0), embeddings[2].unsqueeze(0))
 
-    print(cosine_sim1)
-    print(cosine_sim2)
-    print(cosine_sim3)
+    print("river bank and money bank1 similarity: ", cosine_sim1)
+    print("river bank and money bank2 similarity: ", cosine_sim2)
+    print("money bank1 and money bank2 similarity: ", cosine_sim3)
