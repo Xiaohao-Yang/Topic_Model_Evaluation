@@ -108,9 +108,35 @@ We propose evaluation metrics for topic models, by quantifying the similarity be
 * To compute the similarity between 2 word sets, check 'word_set_similarity.py'.
 
 # Get contextualised word embeddings from LLMs
-For our distance-based evaluation metrics, we consider word embeddings. The word embeddings can be static word embeddings from a pre-trained model such as 'Glove', or a dynamic word embedding that considers the context.
+For our distance-based evaluation metrics, we consider word embeddings. The word embeddings can be static word embeddings from a pre-trained model such as 'Glove', or a dynamic word embedding that considers the context. Here we provide an example that obtains contextualised word embeddings from an LLM. The functions in the following example can be found in 'llm_embedding.py'.
 
-Here we provide an example that obtains contextualised word embeddings from an LLM.
+For this part, we leverage the hugging face 'transformer', with 'bitsandbytes'. Firstly, we set up the model and tokenizer:
+```python
+llm_paras = {'max_input_length': 2048,
+             'base_model': 'meta-llama/Llama-2-13b-chat-hf'
+             # 'base_model': 'meta-llama/Llama-2-7b-chat-hf',   # feel free to try different ones
+             # 'base_model': 'meta-llama/Llama-2-7b-hf'         
+                    }
+
+# quantisation setting
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+
+# load model
+model = AutoModelForCausalLM.from_pretrained(llm_paras['base_model'], quantization_config=bnb_config)
+
+# load tokenizer
+tokenizer = AutoTokenizer.from_pretrained(
+    llm_paras['base_model'],
+    model_max_length=llm_paras['max_input_length'],
+    padding_side="left",
+    add_eos_token=True)
+tokenizer.pad_token = tokenizer.eos_token
+```
 
 
 
