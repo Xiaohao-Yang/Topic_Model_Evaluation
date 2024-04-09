@@ -83,6 +83,16 @@ doc_words_DBpedia = llm_doc_summary(DBpedia, package_path, model_path, embedding
 ```
 
 
+```python
+Dojutr w. Dojutr w d jutruf is a village in the administrative district of Gmina Blizan w within Kalisz County Greater Poland Voivodeship in west central Poland.
+
+
+Tony Souli . Tony Souli (born 1955) is a French artist working in painting printmaking sculpture installation art and photography.
+
+
+I 121 class submarine. The I 121 class submarine ( I 121 gata Sensuikan) was a class of submarine in the Imperial Japanese Navy (IJN) serving from the 1920s to the Second World War. The IJN classed it as a Kiraisen ( Minelaying submarine).
+```
+
 # Similarity between word sets
 
 # Get contextalised word embeddings from LLMs
