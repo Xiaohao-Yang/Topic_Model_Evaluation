@@ -65,8 +65,22 @@ package_path = '~/Desktop/llama.cpp'
 # expected keywords
 topn = 30
 ```
-Following that, 
+As the words obtained from LLMs are from a huge space, we further filter the words obtained from the LLM and keep only the words in GloVe's vocabulary set, which makes it cheap to get their word embeddings.
+```python
+# model for word embeddings
+embedding_model = 'glove-wiki-gigaword-50'
+print('Loading embedding model %s...' % embedding_model)
+embedding_model = api.load("glove-wiki-gigaword-50")
+print('Loading done!')
+```
+Following that, we set up the path to save the output, and run the summarisation function:
+```python
+save_path_news = 'test_20News.txt'     # or define your save path
+save_path_DBpedia = 'test_DBpedia.txt' # or define your save path
 
+doc_words_news = llm_doc_summary(newsgroups, package_path, model_path, embedding_model, topn, save_path_news)
+doc_words_DBpedia = llm_doc_summary(DBpedia, package_path, model_path, embedding_model, topn, save_path_DBpedia)
+```
 
 
 # Similarity between word sets
