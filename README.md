@@ -15,6 +15,7 @@ gensim: 3.8.3
 tqdm: 4.66.1
 pot: 0.9.3
 ```
+We run LDA using [MALLET](https://radimrehurek.com/gensim_3.8.3/models/wrappers/ldamallet.html), please follow their instructions to install.  
 
 We leverage 'llama.cpp' for easy LLM inference, please set it up following [llama.cpp](https://github.com/ggerganov/llama.cpp) (We suggest BLAS Build with CUDA for faster inference.); The LLM we use is 'llama2-13b-chat' in 4-bit quantisation, which can be downloaded [here](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/tree/main). We are not specific to a certainty LLM, any other LLMs in 'ggml' format that supports 'llama.cpp' also work.
 
@@ -24,6 +25,8 @@ transformers: 4.37.2
 accelerate: 0.26.1
 bitsandbytes: 0.42.0
 ```
+
+
 
 # Dataset
 We use '20News' and 'DBpedia' (a random subset) for our experiments. The pre-processed datasets can be found in the 'datasets' folder.
@@ -218,5 +221,15 @@ test doc words similarity OT:  0.5356814424001106
 We store the top words for learned topics in a text file for further topic coherence evaluation, which can be done by the [Palmetto](https://github.com/dice-group/Palmetto) package.
 
 # Reference
+Our code is based on the following implementations:
+
+
+* For NVDM: Code.
+* For PLDA: Code.
+* For ETM
+* For NSTM
+* For SCHOLAR and CLNTM
+* 
+
 
 # Citation
