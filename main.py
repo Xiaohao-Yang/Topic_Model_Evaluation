@@ -24,7 +24,8 @@ if __name__ == '__main__':
         paras = parameter_dict[args.model][args.dataset]
         lr = paras[0]           # learning rate
         rec_weight = paras[1]   # reconstruction weight
-        epochs = paras[2]       # training epochs
+        # epochs = paras[2]       # training epochs
+        epochs = args.epochs
         argument = (('python models/%s/train.py --dataset=%s --n_topic=%s --seed=%s --epochs=%s --eval_step=%s '
                     '--lr=%s --rec_loss_weight=%s') %
                     (args.model, args.dataset, args.n_topic, args.random_seed, epochs, args.eval_step, lr, rec_weight))
@@ -32,13 +33,15 @@ if __name__ == '__main__':
     elif args.model in ['SCHOLAR', 'CLNTM']:
         paras = parameter_dict[args.model][setting]
         lr = paras[0]           # learning rate
-        epochs = paras[1]       # training epochs
+        # epochs = paras[1]       # training epochs
+        epochs = args.epochs
         argument = ('python models/SCHOLAR/train.py --model %s --dataset=%s --n_topic=%s --seed=%s --epochs=%s --eval_step=%s --lr=%s') \
                    % (args.model, args.dataset, args.n_topic, args.random_seed, epochs, args.eval_step, lr)
     else:
         paras = parameter_dict[args.model][setting]
         lr = paras[0]                                            # learning rate
-        epochs = paras[1]                                        # training epochs
+        # epochs = paras[1]                                        # training epochs
+        epochs = args.epochs
         argument = ('python models/%s/train.py --dataset=%s --n_topic=%s --seed=%s --epochs=%s --eval_step=%s --lr=%s') \
                    % (args.model, args.dataset, args.n_topic, args.random_seed, epochs, args.eval_step, lr)
 
