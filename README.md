@@ -84,13 +84,19 @@ doc_words_DBpedia = llm_doc_summary(DBpedia, package_path, model_path, embedding
 
 Here are some output keywords summarisation by the LLM, for the original documents:
 ```python
+# origianl documents
 Dojutr w. Dojutr w d jutruf is a village in the administrative district of Gmina Blizan w within Kalisz County Greater Poland Voivodeship in west central Poland.
+# keywords from the LLM
 village poland district gmina kalisz county voivodeship west central
 
+# origianl documents
 Tony Souli . Tony Souli (born 1955) is a French artist working in painting printmaking sculpture installation art and photography.
+# keywords from the LLM
 artist french painting printmaking sculpture installation photography
 
+# origianl documents
 I 121 class submarine. The I 121 class submarine ( I 121 gata Sensuikan) was a class of submarine in the Imperial Japanese Navy (IJN) serving from the 1920s to the Second World War. The IJN classed it as a Kiraisen ( Minelaying submarine).
+# keywords from the LLM
 submarine japanese navy world war minelaying class imperial service
 ```
 
