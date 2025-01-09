@@ -6,8 +6,8 @@ This is the official implementation of WALM (Word Agreement with Language Model)
 
 # Installation
 ```
-git clone 
-cd 
+git clone https://github.com/Xiaohao-Yang/Topic_Model_Evaluation.git
+cd Topic_Model_Evaluation
 conda create -n walm python=3.9
 conda activate walm
 
