@@ -1,4 +1,4 @@
-# WALM (Word Agreement with Language Model
+# WALM (Word Agreement with Language Model)
 This is the official implementation of WALM (Word Agreement with Language Model), which is proposed in 
 LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models (paper link)
 
