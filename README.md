@@ -1,19 +1,16 @@
 # Topic Model Evaluation
 Evaluation of topic model generative quality with large language models.
 
-# Requirements
-```python
-torch: 2.1.2 
-torchaudio: 2.1.2                    
-torchvision: 0.16.2 
-scikit-learn: 1.4.0
-numpy: 1.26.3 
-nltk: 3.8.1
-scipy: 1.12.0
-spacy: 3.7.4
-gensim: 3.8.3         
-tqdm: 4.66.1
-pot: 0.9.3
+# Installation
+```
+git clone 
+cd 
+conda create -n walm python=3.9
+conda activate walm
+
+# install pytorch, check for your own system following this page https://pytorch.org/
+pip3 install torch torchvision torchaudio
+pip install -r requirements.txt
 ```
 We run LDA using [MALLET](https://radimrehurek.com/gensim_3.8.3/models/wrappers/ldamallet.html), please follow their instructions to install.  
 
