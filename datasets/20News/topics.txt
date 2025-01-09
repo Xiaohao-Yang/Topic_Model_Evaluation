@@ -1,0 +1,28 @@
+[1] Trade (Count: 24): Mentions the exchange of players between teams.
+[1] Government (Count: 33): Discusses the role of government agencies in controlling and accessing encrypted communications.
+[1] Religion (Count: 69): Discusses belief systems and philosophical ideas.
+[1] Education (Count: 25): Mentions college years as a time for exploring ideas.
+[1] Health (Count: 36): Refers to the increase in smoking habits.
+[1] International Relations (Count: 20): Discusses international cooperation and agreements.
+[1] Ethics (Count: 33): Discusses the concept of morality and its relation to intelligence.
+[1] Humor (Count: 22): Contains elements of humor or sarcasm.
+[1] Society (Count: 33): Discusses societal attitudes and norms towards different sexual orientations.
+[1] Media (Count: 32): Discusses the role and influence of media in shaping public opinion.
+[1] Law and Justice (Count: 39): Refers to the legal proceedings and trials.
+[1] History (Count: 22): Discusses historical events and their causes.
+[1] Safety (Count: 20): Discusses the importance of proper helmet usage and maintenance for protection.
+[1] Communication (Count: 99): Discusses the use of words and the importance of clear definitions.
+[1] Literature (Count: 14): Discusses a specific book and its influence.
+[1] Repair and Maintenance (Count: 23): This is a new topic suggested by the document, which discusses the repair and adjustment of a device's power supply.
+[1] Software Development (Count: 34): Discusses the use of specific commands and functions in software development.
+[1] Consumer Rights (Count: 14): The document discusses issues related to consumer rights and warranties.
+[1] Internet Culture (Count: 15): Discusses the structure and organization of newsgroups.
+[1] Troubleshooting (Count: 15): Discusses the process of diagnosing and resolving problems in a system.
+[1] Medical Care for Chronic Hepatitis (Count: 15): Discusses the process of diagnosing and treatment options for chronic persistent hepatitis and chronic active hepatitis.
+[1] Vehicle Review and Components (Count: 35): The document is a comprehensive review of a specific car model, discussing its features, performance, cost and related components.
+[1] Sports Statistics (Count: 75): Discusses scores, statistics and their analysis in sports, specifically hockey and baseball.
+[1] Technology and Electronics (Count: 258): Discusses specific hardware and electronic components and their specifications.
+[1] Economic and Employment Issues (Count: 28): Discusses issues related to unemployment, industry, jobless benefits and job creation.
+[1] Military and Firearm Technology (Count: 18): Discusses specific types of military equipment, their uses and understanding of different types of firearms.
+[1] Space and Finance (Count: 32): Discusses topics related to satellite, space missions and their budgeting and funding.
+
