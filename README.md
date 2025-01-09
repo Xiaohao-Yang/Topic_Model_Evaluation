@@ -2,7 +2,7 @@
 This is the official implementation of WALM (Word Agreement with Language Model), which is proposed in 
 
 
-LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models (paper link)
+[TACL 2025] LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models (paper link)
 
 # Installation
 ```
