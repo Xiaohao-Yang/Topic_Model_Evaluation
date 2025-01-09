@@ -1,5 +1,6 @@
-# Topic Model Evaluation
-Evaluation of topic model generative quality with large language models.
+# WALM (Word Agreement with Language Model
+This is the official implementation of WALM (Word Agreement with Language Model), which is proposed in 
+LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models (paper link)
 
 # Installation
 ```
