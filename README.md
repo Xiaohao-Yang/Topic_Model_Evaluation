@@ -16,18 +16,6 @@ pip3 install torch torchvision torchaudio
 # install required packages
 pip install -r requirements.txt
 ```
-We run LDA using [MALLET](https://radimrehurek.com/gensim_3.8.3/models/wrappers/ldamallet.html), please follow their instructions to install.  
-
-We leverage 'llama.cpp' for easy LLM inference, please set it up following [llama.cpp](https://github.com/ggerganov/llama.cpp) (We suggest BLAS Build with CUDA for faster inference.); The LLM we use is 'llama2-13b-chat' in 4-bit quantisation, which can be downloaded [here](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/tree/main). We are not specific to a certainty LLM, any other LLMs in 'ggml' format that supports 'llama.cpp' also work.
-
-To run LLMs using 'hugging face' transformers or get contextualised word embeddings from LLMs, please install:
-```python
-transformers: 4.37.2
-accelerate: 0.26.1
-bitsandbytes: 0.42.0
-```
-
-
 
 # Dataset
 We use '20News' and 'DBpedia' (a random subset) for our experiments. The pre-processed datasets can be found in the 'datasets' folder.
