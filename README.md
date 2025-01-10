@@ -106,8 +106,85 @@ print('walm optimal transport: ', walm_ot(word_dis1, word_dis2, embedding_model)
 
 <details>
   <summary>Keywords from LLMs</summary>
+  ## Generate keywords for test documents from an LLM
+
+
+```python
+from walm import generate_keywords
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import scipy.io as sio
+import torch
+```
+
+    [nltk_data] Downloading package wordnet to /home/xiaohao/nltk_data...
+    [nltk_data]   Package wordnet is already up-to-date!
+    /home/xiaohao/anaconda3/envs/walm/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+      from .autonotebook import tqdm as notebook_tqdm
+
+
+
+```python
+# load documents
+dataset = '20News'
+data_dict = sio.loadmat('datasets/%s/data.mat' % dataset)
+test_doc = data_dict['test_text'].tolist()
+test_doc = [doc[0][0].strip() for doc in test_doc]
+
+# take 10 documents as an example
+test_doc = test_doc[0:10]
+```
+
+
+```python
+# load an llm model, we support the following LLMs in current version
+model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
+# model_name = 'mistralai/Mistral-7B-Instruct-v0.3'
+# model_name = 'microsoft/Phi-3-mini-128k-instruct'
+# model_name = '01-ai/Yi-1.5-9B-Chat'
+
+model = AutoModelForCausalLM.from_pretrained(model_name,
+                                             trust_remote_code=True,
+                                             torch_dtype=torch.float16
+                                             ).cuda()
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer.pad_token = tokenizer.eos_token
+```
+
+    Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.78it/s]
+
+
+
+```python
+# generate keywords
+save_path = 'test_opt.txt'
+generate_keywords(model, tokenizer, test_doc, save_path)
+```
+
+    Running LLM Inference ...
+
+
+      0%|          | 0/10 [00:00<?, ?it/s]The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+    From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+    100%|██████████| 10/10 [00:12<00:00,  1.29s/it]
+
+
+The output is saved in your defined .txt file in JSON format:
+
+
+```python
+{'Words': ['Harvard', 'Graphics', 'Windows', 'Sale', 'Price']}
+{'Words': ['Abortion', 'Rights', 'Case', 'Good', 'Pro']}
+{'Words': ['mound', 'season', 'strike', 'zone', 'seventies']}
+{'Words': ['PlusMinus', 'Players', 'Role', 'Time', 'Jagr']}
+{'Words': ['Efficiency', 'X11', 'Clients', 'Performance', 'XRemote']}
+{'Words': ['Windows', 'Hardware', 'Interrupts', 'DOS', 'UART']}
+{'Words': ['train', 'station', 'cities', 'drive', 'airport']}
+{'Words': ['IDE', 'Drive', 'Error', 'Format', 'Software']}
+{'Words': ['Projector', 'Super', '8mm', 'Sound', 'ForSale']}
+{'Words': ['Society', 'Life', 'Killing', 'Value', 'Children']}
+```
+
   
-  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
 </details>
 
 
