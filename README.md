@@ -33,6 +33,7 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
   <summary>Score Functions</summary>
   
   This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
+  [Try score functions](<notebook-name>.ipynb)
 </details>
 
 
