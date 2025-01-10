@@ -32,7 +32,7 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 <details>
   <summary>Score Functions</summary>
   
-  # WALM score functions
+  ## WALM score functions
 
 WALM score functions compute the similarity between two sets of words.
 
@@ -52,7 +52,7 @@ words1 = ['us', 'au']
 words2 = ['america', 'australia', 'people']
 ```
 
-## Overlap-based score functions
+### Overlap-based score functions
 
 
 ```python
@@ -67,7 +67,7 @@ print('walm synset: ', walm_synset(words1, words2))
 
 walm_overlap measures the overlap between two sets of words, while walm_synset extends this by considering synset overlap between different words.
 
-## Embedding-based score functions
+### Embedding-based score functions
 
 
 ```python
@@ -104,8 +104,6 @@ print('walm optimal transport: ', walm_ot(word_dis1, word_dis2, embedding_model)
 
 
 walm_ot solves an optimal transport problem between word distribution 1 and word distribution 2.
-
-For further details of the computation, please refer to the implmenetation [here] or the paper [here]
 </details>
 
 
