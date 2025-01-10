@@ -28,7 +28,14 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 * train_text, test_text: text documents of training and testing set.
 
 
-# Get document keywords from LLMs
+# Functions
+<details>
+  <summary>Score Functions</summary>
+  
+  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
+</details>
+
+
 Here, we provide an example of document keyword summarisation by an LLM, which is also illustrated in 'example.py'.
 
 Firstly, we randomly pick some documents from '20News' and 'DBpedia':
