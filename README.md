@@ -36,10 +36,29 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 </details>
 
 
+<details>
+  <summary>Keywords from LLMs</summary>
+  
+  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
+</details>
 
 
-# Get contextualised word embeddings from LLMs
-For our distance-based evaluation metrics, we consider word embeddings. The word embeddings can be static word embeddings from a pre-trained model such as 'Glove', or a dynamic word embedding that considers the context. Here we provide an example that obtains contextualised word embeddings from an LLM. The functions in the following example can be found in 'llm_embedding.py'.
+<details>
+  <summary>Topic-Aware Keywords from LLMs</summary>
+  
+  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
+</details>
+
+<details>
+  <summary>Keywords from Topic Models</summary>
+  
+  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
+</details>
+
+<details>
+  <summary>Contextualized word embeddings from LLMs</summary>
+  
+  For our distance-based evaluation metrics, we consider word embeddings. The word embeddings can be static word embeddings from a pre-trained model such as 'Glove', or a dynamic word embedding that considers the context. Here we provide an example that obtains contextualised word embeddings from an LLM. The functions in the following example can be found in 'llm_embedding.py'.
 
 For this part, we leverage the hugging face 'transformer', with 'bitsandbytes'. Firstly, we set up the model and tokenizer:
 ```python
@@ -123,6 +142,12 @@ river bank and money bank1 similarity:  tensor([0.6396], dtype=torch.float16)
 river bank and money bank2 similarity:  tensor([0.5205], dtype=torch.float16)
 money bank1 and money bank2 similarity:  tensor([0.7021], dtype=torch.float16)
 ```
+</details>
+
+
+
+
+
 
 # Run evaluation for topic models
 To run evaluation for topic models:
