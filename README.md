@@ -3,13 +3,17 @@ This is the official implementation of WALM (**W**ord **A**greement with **L**an
 
 # Installation
 ```
+# clone project
 git clone https://github.com/Xiaohao-Yang/Topic_Model_Evaluation.git
-cd Topic_Model_Evaluation
+
+# create environment
 conda create -n walm python=3.9
 conda activate walm
 
 # install pytorch, check for your own system following this page https://pytorch.org/
 pip3 install torch torchvision torchaudio
+
+# install required packages
 pip install -r requirements.txt
 ```
 We run LDA using [MALLET](https://radimrehurek.com/gensim_3.8.3/models/wrappers/ldamallet.html), please follow their instructions to install.  
