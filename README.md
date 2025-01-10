@@ -53,7 +53,7 @@ words2 = ['america', 'australia', 'people']
 ```
 
 ### Overlap-based score functions
-
+walm_overlap measures the overlap between two sets of words, while walm_synset extends this by considering synset overlap between different words.
 
 ```python
 # overlap based scores
@@ -65,10 +65,8 @@ print('walm synset: ', walm_synset(words1, words2))
     walm synset:  0.2
 
 
-walm_overlap measures the overlap between two sets of words, while walm_synset extends this by considering synset overlap between different words.
-
 ### Embedding-based score functions
-
+walm_oa solves an optimal assignment problem between word set 1 and word set 2. walm_ot solves an optimal transport problem between word distribution 1 and word distribution 2.
 
 ```python
 # load word embedding model
@@ -90,7 +88,7 @@ print('walm optimal assignment: ', walm_oa(words1, words2, embedding_model))
     walm optimal assignment:  0.978635346639759
 
 
-walm_oa solves an optimal assignment problem between word set 1 and word set 2.
+
 
 
 ```python
@@ -103,7 +101,6 @@ print('walm optimal transport: ', walm_ot(word_dis1, word_dis2, embedding_model)
     walm optimal transport:  0.5193005172391889
 
 
-walm_ot solves an optimal transport problem between word distribution 1 and word distribution 2.
 </details>
 
 
