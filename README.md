@@ -23,7 +23,7 @@ We use '20News' and 'DBpedia' (a random subset) for our experiments. The pre-pro
 We store our pre-processed datasets in '.mat' files, which can be loaded as dictionaries using 'scipy.io.loadmat()'. The datasets/dictionaries have the following common attributes/keys:
 * wordsTrain, labelsTrain: bag-of-words (BOW) of training documents, and their labels.
 * wordsTest, labelsTest: BOW of testing documents, and their labels.
-* vocabulary: vocabularies of the corpus.
+* vocabulary: vocabulary set of the text corpus.
 * test1, test2: the first and second fold of the test BOWs (for computing document completion perplexity).
 * train_text, test_text: text documents of training and testing set.
 
