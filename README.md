@@ -113,10 +113,6 @@ import scipy.io as sio
 import torch
 ```
 
-    [nltk_data] Downloading package wordnet to /home/xiaohao/nltk_data...
-    [nltk_data]   Package wordnet is already up-to-date!
-    /home/xiaohao/anaconda3/envs/walm/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-      from .autonotebook import tqdm as notebook_tqdm
 
 
 
@@ -147,22 +143,15 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token
 ```
 
-    Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.78it/s]
+
 
 
 
 ```python
 # generate keywords
 save_path = 'test_opt.txt'
-generate_keywords(model, tokenizer, test_doc, save_path)
+outputs = generate_keywords(model, tokenizer, test_doc, save_path)
 ```
-
-    Running LLM Inference ...
-
-
-      0%|          | 0/10 [00:00<?, ?it/s]The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-    From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
-    100%|██████████| 10/10 [00:12<00:00,  1.29s/it]
 
 
 The output is saved in your defined .txt file in JSON format:
