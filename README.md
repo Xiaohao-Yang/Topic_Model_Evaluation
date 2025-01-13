@@ -42,8 +42,7 @@ from walm import walm_overlap, walm_synset, walm_ot, walm_oa
 import gensim.downloader as api # we use gensim word embedding models
 ```
 
-    [nltk_data] Downloading package wordnet to /home/xiaohao/nltk_data...
-    [nltk_data]   Package wordnet is already up-to-date!
+
 
 
 
