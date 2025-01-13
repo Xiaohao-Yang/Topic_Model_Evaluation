@@ -107,7 +107,7 @@ print('walm optimal transport: ', walm_ot(word_dis1, word_dis2, embedding_model)
 <details>
   <summary>Keywords from LLMs</summary>
   
-  ## Generate keywords for test documents from an LLM
+  ## Generate keywords for test documents from an LLM (open in [jupyter](kw_llm.ipynb))
 
 
 ```python
