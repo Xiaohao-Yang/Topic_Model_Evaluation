@@ -32,7 +32,7 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 <details>
   <summary>Score Functions</summary>
   
-  ## WALM score functions (open in [jupyternote](score_functions.ipynb))
+  ## WALM score functions (open in [jupyter](score_functions.ipynb))
 
 WALM score functions compute the similarity between two sets of words.
 
