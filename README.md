@@ -74,9 +74,6 @@ embedding_model = api.load("glove-wiki-gigaword-50")
 print('Loading done!')
 ```
 
-    Loading glove model ...
-    Loading done!
-
 
 
 ```python
