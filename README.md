@@ -154,7 +154,7 @@ outputs = generate_keywords(model, tokenizer, test_doc, save_path)
 ```
 
 
-The output is saved in your defined .txt file in JSON format:
+The output will be also saved in your defined .txt file in JSON format:
 
 
 ```python
