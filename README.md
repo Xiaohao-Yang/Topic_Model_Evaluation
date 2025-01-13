@@ -177,8 +177,106 @@ The output will be also saved in your defined .txt file in JSON format:
 <details>
   <summary>Topic-Aware Keywords from LLMs</summary>
   
-  This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
-</details>
+  ## Generate topic-aware keywords for test documents from LLM (open in [jupyter notebook](kw-topic_llm.ipynb))
+
+### Step1: Generate global topics
+
+To generate global topics for the document collection from an LLM, we follow the topic generation approach in [TopicGPT](https://github.com/chtmp223/topicGPT). We have saved the output topics under the dataset folder (e.g., datasets/20News/topics.txt).
+
+### Step2: Topic selection
+
+
+```python
+from walm import extract_text_between_strings, generate_topic_select, generate_topics_aware
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import scipy.io as sio
+import torch
+
+# load documents
+dataset = '20News'
+data_dict = sio.loadmat('datasets/%s/data.mat' % dataset)
+test_doc = data_dict['test_text'].tolist()
+test_doc = [doc[0][0].strip() for doc in test_doc]
+
+# take 10 documents as an example
+test_doc = test_doc[0:10]
+
+# load llm model
+model_name = 'meta-llama/Meta-Llama-3-8B-Instruct'
+# model_name = 'mistralai/Mistral-7B-Instruct-v0.3'
+# model_name = 'microsoft/Phi-3-mini-128k-instruct'
+# model_name = '01-ai/Yi-1.5-9B-Chat'
+model = AutoModelForCausalLM.from_pretrained(model_name,
+                                             trust_remote_code=True,
+                                             torch_dtype=torch.float16
+                                             ).cuda()
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer.pad_token = tokenizer.eos_token
+
+# load global topics from this dataset
+with open('datasets/%s/topics.txt' % dataset, 'r') as file:
+    topics = file.readlines()
+topics = topics[0:-1]
+topics = [extract_text_between_strings(item, "[1]", "(Count:")[0].strip() for item in topics]
+
+# run topic selection
+save_path = 'step1_topic-select.txt'
+doc_topics = generate_topic_select(model, tokenizer, topics, test_doc, save_path)
+```
+
+
+
+```python
+for item in doc_topics:
+    print(item)
+```
+
+    {'Topics': ['Technology and Electronics', 'Software Development', 'Economic and Employment Issues']}
+    {'Topics': ['Consumer Rights', 'Law and Justice', 'Ethics', 'Society']}
+    {'Topics': ['Sports Statistics', 'History']}
+    {'Topics': ['Sports Statistics']}
+    {'Topics': ['Technology and Electronics', 'Software Development', 'Internet Culture', 'Communication']}
+    {'Topics': ['Technology and Electronics', 'Software Development']}
+    {'Topics': ['Transportation', 'Consumer Rights', 'Society']}
+    {'Topics': ['Technology and Electronics', 'Repair and Maintenance', 'Software Development']}
+    {'Topics': ['Technology and Electronics', 'Consumer Rights']}
+    {'Topics': ['Society', 'Ethics', 'Religion']}
+
+
+### Step2: Topic-Aware keywords generation
+
+
+```python
+# load selected topics from test documents
+with open('step1_topic-select.txt', 'r') as file:
+    doc_topics = file.readlines()
+
+# define save path and run generation
+save_path = 'step2_topic-aware_kws.txt'
+outputs = generate_topics_aware(model, tokenizer, doc_topics, test_doc, save_path)
+```
+
+     
+
+
+
+```python
+for item in outputs:
+    print(item)
+```
+
+    Technology, Development, Sale, Software, Economic, Graphics, Harvard, Employment, Electronics, Issues, Price, Windows, Harvard Graphics
+    Ethical, Justice, Constitution, Societal, Morality, Abortion, Bioethics, Moral, Rights, Ethics, Law
+    History, Strike, Sports, Baseball, Mound, Zone, Statistics
+    Role, Plus/minus, Players, Context, Statistics
+    Async Solutions, Graphics Accelerator, Efficiency, Internet Culture, X11 Clients, Communication, Software Development, X11, Clients
+    Technology, UART, Serial Communication, Software Development, Electronics, Hardware Interrupts, Interrupts, Hardware, Windows
+    Train, Station, City, Protection, Dispute, Airport, Cities, Infrastructure, Complaint, Consumer, Rights, Society, Transportation
+    PCTools, Data Error, Error, IDE drive, IDE, Drive, Low Level Format, Maintenance, Data error, Disk recovery, IDE Drive, Repair, Low level format, Sector Marking, Disk Recovery
+    Technology, Sound, Sale, Protection, Purchase, Electronics, Super 8mm, Projector, Consumer, Rights
+    Life, Morality, Violence, Killing, Moral, Values, Society, Value
+
+
 
 <details>
   <summary>Keywords from Topic Models</summary>
