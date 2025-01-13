@@ -1,0 +1,6 @@
+transformers
+nltk
+pot
+numpy
+scipy
+gensim
