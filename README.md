@@ -32,7 +32,7 @@ We store our pre-processed datasets in '.mat' files, which can be loaded as dict
 <details>
   <summary>Score Functions</summary>
   
-  ## WALM score functions (open in [jupyter](score_functions.ipynb))
+  ## WALM score functions ([jupyter notebook](score_functions.ipynb))
 
 WALM score functions compute the similarity between two sets of words.
 
@@ -103,7 +103,7 @@ print('walm optimal transport: ', walm_ot(word_dis1, word_dis2, embedding_model)
 <details>
   <summary>Keywords from LLMs</summary>
   
-  ## Generate keywords for test documents from an LLM (open in [jupyter](kw_llm.ipynb))
+  ## Generate keywords for test documents from an LLM ([jupyter notebook](kw_llm.ipynb))
 
 
 ```python
@@ -177,7 +177,7 @@ The output will be also saved in your defined .txt file in JSON format:
 <details>
   <summary>Topic-Aware Keywords from LLMs</summary>
   
-  ## Generate topic-aware keywords for test documents from LLM (open in [jupyter notebook](kw-topic_llm.ipynb))
+  ## Generate topic-aware keywords for test documents from LLM ([jupyter notebook](kw-topic_llm.ipynb))
 
 ### Step1: Generate global topics
 
@@ -276,7 +276,7 @@ for item in outputs:
     Technology, Sound, Sale, Protection, Purchase, Electronics, Super 8mm, Projector, Consumer, Rights
     Life, Morality, Violence, Killing, Moral, Values, Society, Value
 
-
+</details>
 
 <details>
   <summary>Keywords from Topic Models</summary>
