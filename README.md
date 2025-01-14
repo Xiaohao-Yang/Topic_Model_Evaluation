@@ -1,5 +1,5 @@
 # Topic model evaluation with WALM (Word Agreement with Language Model)
-This is the official implementation of WALM (Word Agreement with Language Model), as proposed in *LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models* ([paper link]).
+This is the official implementation of WALM (Word Agreement with Language Model), as proposed in: *LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models* ([paper link](https://arxiv.org/abs/2406.09008)).
 
 # Installation
 ```
