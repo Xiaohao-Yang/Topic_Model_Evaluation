@@ -489,11 +489,11 @@ We store the top words for learned topics in a text file for further topic coher
 
 # Citation
 Please cite our work if it helps:
-
+```python
 @article{yang2024llm,
   title={LLM Reading Tea Leaves: Automatically Evaluating Topic Models with Large Language Models},
   author={Yang, Xiaohao and Zhao, He and Phung, Dinh and Buntine, Wray and Du, Lan},
   journal={arXiv preprint arXiv:2406.09008},
   year={2024}
 }
-
+'''
