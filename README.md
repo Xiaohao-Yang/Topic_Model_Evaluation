@@ -363,7 +363,7 @@ for i in range(len(filtered_words)):
 
 
 <details>
-  <summary>Keywords from Topic Models</summary>
+  <summary>Compute WALM for Topic Models</summary>
   
   This is a detailed explanation hidden inside a foldable section. You can add more text here, use Markdown formatting, or even include images or links.
 </details>
